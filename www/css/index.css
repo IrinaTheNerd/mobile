@@ -58,11 +58,7 @@ body {
     margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
                                    /* offset horizontal: half of text area width */
 }
-nav ul li {
-	display: inline;
-	height: 2em;
-	font-size: 1.8em;
-}
+
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
     .app {
@@ -71,6 +67,11 @@ nav ul li {
         margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
                                       /* offset horizontal: half of image width and text area width */
     }
+	nav ul li {
+	display: inline;
+	height: 2em;
+	font-size: 1.8em;
+}
 }
 
 h1 {
