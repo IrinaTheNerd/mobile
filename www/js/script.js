@@ -10,7 +10,7 @@ function submitText() {
 }
 
 function storeValue(text) { 
-	var newName = window.localStorage.getItem(text);
+	//var newName = window.localStorage.getItem(text);
 	alert(newName);
 }
 
