@@ -35,62 +35,22 @@
 </head>
 
 <body>
-	<nav id="panel" data-role="panel" data-display="overlay" position="left">
-	<ul>
-		<li><a href="#pageone">Page One</a></li>
-		<li><a href="#pagetwo">Page Duo</a></li>
-		<li><a href="#pagethree">Page Drei</a></li>
-	</nav>
-
-	
-	
-	
-	
-	<!--Pages start here -->
   <div data-role="page" id="pageone">
-    <div data-role="header">
-      <h1>Hello, Stranger</h1>
-    </div>
-	<a href="#panel" class="open">Open Panel</a>
-	
-    <div data-role="main" class="ui-content">
-      <p>Welcome! If you click on the link below, it will take you to Page Two.</p>
-      
-    </div>
+    <div role="main" class="ui-content">
+      <input type="text" id="textinput" value="">
+      <!-- on click submits text-->
+      <button onClick="submitText()">Submit A</button>
 
-    <div data-role="footer">
-      <h1>Footer Text</h1>
+      <!-- submits text with jquery-->
+      <button id="submitButton">Submit A</button>
     </div>
-  </div>
+</div>
+<div data-role="footer">
+  Footer
+</div>
 
-  <div data-role="page" id="pagetwo">
-	 <div data-role="header">
-      <h1>Hello, Stranger and again another stranger hello</h1>
-    </div>
-	<a href="#panel" class="open">Open Panel</a>
-	
-    <div data-role="main" class="ui-content">
-      <p>Welcome! If you click on the link below, it will take you to Page Two.</p>
-    </div>
-	   <div data-role="footer">
-      <h1>Footer Text</h1>
-    </div>
-  </div>
-  
-  <div data-role="page" id="pagethree">
-    <div data-role="header">
-      <h1>Hello, Stranger</h1>
-    </div>
-	
-    <div data-role="main" class="ui-content">
-      <p>Welcome! If you click on the link below, it will take you to Page Two.</p>
-      
-    </div>
 
-    <div data-role="footer">
-      <h1>Footer Text</h1>
-    </div>
-  </div>
+ 
   
   <script type="text/javascript" src="cordova.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
