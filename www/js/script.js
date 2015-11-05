@@ -6,11 +6,17 @@
 
 function submitText() {
 	var text = $('#textinput').val();
-	storeValue(text);
+	//alert(text);
+	var pizza = "fancies";
+	storeValue(pizza, text);
 }
 
-function storeValue(text) { 
-	//var newName = window.localStorage.getItem(text);
-	alert(newName);
+function storeValue(pizza, text) { 
+	
+	var saved = window.localStorage.setItem(pizza, text);
+	//alert(saved);
+	
+	
+	var storedVal = window.localStorage.getItem(pizza);
+	alert(storedVal);
 }
-
