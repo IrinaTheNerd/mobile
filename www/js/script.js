@@ -1,17 +1,16 @@
-$(document).("pagecreate","#pageone", function(){
-	$('#submitButton').on("click", function() {
-		submitText();
-	});
-});
+		$(document).on("pagecreate", "#pageone",function(){
+			$('#submitButton').on("click", function() {
+				submitText();
+			});
+		});
 
-function sumitText() {
+function submitText() {
 	var text = $('#textinput').val();
-	alert(text);
+	storeValue(text);
 }
 
-/*
-
-function storeValue(name, value) {
-
+function storeValue(text) { 
+	var newName = window.localStorage.getItem(text);
+	alert(newName);
 }
-*omc
+
