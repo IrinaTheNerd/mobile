@@ -57,7 +57,7 @@ function accelerometerError() {
 
 function updateFreq(freq) {
 	//do something to update freq. here.
-	accelerometerOptions.frequency = $('#slider').val();
+	accelerometerOptions.frequency = freq;
 }
 
 
