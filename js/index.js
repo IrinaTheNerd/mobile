@@ -25,7 +25,7 @@ function onPageCreated() {
 
 	//binding between variable 'filetext' and the template 
 	var fileBinding = new Ractive({
-		el: 'container',
+		el: '#container',
 		template: '#template',
 		data: { filetext: filetext}
 	});
