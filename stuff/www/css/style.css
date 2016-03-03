@@ -1,0 +1,206 @@
+
+        /* following two viewport lines are equivalent to the meta viewport statement above, needed for Windows */
+        /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
+        @-ms-viewport { width: 100vw ; zoom: 100% ; }  @viewport { width: 100vw ; zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; }           @viewport { user-zoom: fixed ; }
+
+
+/*reset*/
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,
+code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,
+header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,
+samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,
+video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,
+figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,
+q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}
+table{border-collapse:collapse;border-spacing:0}
+
+/*fonts generated with FontSquirrel, font use is Open Source Licence*/
+
+
+@font-face {
+    font-family: 'arconregular';
+    src: url('../fonts/arcon-regular-webfont.eot');
+    src: url('../fonts/arcon-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/arcon-regular-webfont.woff2') format('woff2'),
+         url('../fonts/arcon-regular-webfont.woff') format('woff'),
+         url('../fonts/arcon-regular-webfont.ttf') format('truetype'),
+         url('../fonts/arcon-regular-webfont.svg#arconregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+    font-family: 'arconregular' !important; /*have to use important to override jQuery mobile default fonts*/
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center !important;
+}
+header {
+    background: #006064;
+    box-shadow: 0px 2px 1vh 1px #263238;
+    width: 100%;
+    margin: 0;
+    padding: 10% 0 0 0;
+    height: 30vh;
+    color: #fff8e3;
+}
+section {
+    background: #01b0f0;
+    width: 100%;
+    margin: 8px 0 0 0;
+    padding: 0;
+    height: 50vh;
+}
+footer {
+    background:#263238;
+    bottom:0;
+    height: 20vh;
+    position:absolute;
+    width: 100%;
+
+  
+}
+#main {background: #01b0f0;}
+#timer-start, #timer {
+    height: 100vh;
+}
+#break-over {
+    text-align: center;
+}
+/*overriding jQuery mobile defaults*/
+button {
+    border: 1px solid #ec407a !important;
+    border-radius: 40px !important;
+    background: #ec407a !important;
+    color:  #fff8e3 !important;
+    width:80px !important;
+    height: 80px !important;
+    margin: 2px auto !important;
+    
+}
+.go {
+    width:90px !important;
+    height: 90px !important;
+    border-radius: 45px !important;
+}
+.most {
+    height: 80vh;
+    background: #263238;
+    box-shadow: 0px 2px 1vh 1px #263238;
+    margin: 0 auto;
+    color: #fff8e3;
+}
+.most > img {
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+}
+.middle {
+    position: absolute;
+    top: 40vh;
+    color: #fff8e3;
+    text-align: center;
+    transform: translateX(-50%);
+    left: 50%;
+}
+.pink {
+    background: #ad1557;
+}
+.dark {
+    background: #263238;
+}
+.blue {
+    background: #01b0f0;
+}
+.green {
+    background: #006064;
+}
+.light-pink {
+    background: #ec407a;
+}
+/*design fixes*/
+.extra-screen {
+    position: relative;
+    bottom: 25%;
+    height: 15vh;
+    z-index: 1;
+}
+.last-screen {
+    position:relative;
+    height:10vh;
+}
+/*extra element*/
+.circle {
+    width:3em;
+    height:3em;
+    background: #006064;
+    border-radius: 50%;
+}
+.z-index {
+    z-index:10;
+}
+.clock {
+    font-size: 1.5em;
+    color: #fff;
+}
+.top {
+    position:absolute;
+    top: 20vh;
+    left: 5vh;
+    text-align: center;
+}
+.top h1 {
+    color:#ad1557;
+    text-shadow: none !important;
+}
+
+/*extending jquery*/
+.ui-radio .ui-btn.ui-radio-on:after { 
+    display:none; 
+    visibility: hidden;
+}
+/*Typography*/
+h1 {font-size: 2.5em;}
+h2 {font-size: 2em;}
+p {
+    font-size: 1.5em; 
+    text-shadow: none !important;
+}
+a {
+    color: #fff8e3;
+    text-shadow: none !important;
+    text-decoration: none;
+}
+/*grid*/
+.third {
+    width:32.26%;
+}
+.half {
+    width: 50%;
+}
+.col {
+	display: block;
+	float:left; 
+	margin: 1% 0 1% 0.6%;
+}
+.col:first-child { margin-left: 0; }
+
+.quarter-height {
+    height: 30vh;
+}
+section.blue {
+    height:80vh;
+    margin: 0;
+    text-align: center;
+    color:#fff8e3;
+}
+header.quarter-height {
+    height: 40vh;
+}
+.display-stuff #main, .display-stuff #timer {
+  /*  display: none;*/
+
+}
