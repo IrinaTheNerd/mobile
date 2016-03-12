@@ -1,13 +1,13 @@
-
+//swipe 
+//var swiping = document.getElementById('swipe');
 var timerTime = 0,          // Time set on the interval.
     breakTime = 0,
     timerInterval = 0;      // The interval for our loop.
 
 var timerClock = $(".timer").find(".clock"),
     timerInput = $('#timer-input'),
-    secondaryTimer, //defined later
-    breakClock = $(".timer").find(".break-clock"),
-    timerSoundsButton = $('#timer-sounds');
+    secondaryTimer,
+    breakClock = $(".timer").find(".break-clock");
   
 
 // If there is a valid set time from last session, set it again.
@@ -20,8 +20,6 @@ if(Number(localStorage.lastTimerTime)){
     breakClock.text(returnFormattedToSeconds(breakTime));
 
 }
-
-
 
 // When entering new time, the app will trim it and turn it into seconds (*60).
 timerInput.on('change', function () {
@@ -76,11 +74,7 @@ $('header.light-pink.quarter-height').on('click',function(){
     }
 });
          }*/
-// Timer sounds button
 
-timerSoundsButton.on('change', function () {
-    localStorage.timerSounds = this.checked;
-});
 
 // Clicking on the clock.
 
