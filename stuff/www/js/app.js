@@ -1,14 +1,11 @@
-//swipe 
-//var swiping = document.getElementById('swipe');
+
 var timerTime = 0,          // Time set on the interval.
     breakTime = 0,
     timerInterval = 0;      // The interval for our loop.
 
 var timerClock = $(".timer").find(".clock"),
-  //  timerSelection = $('#timer-input:selected').val(),
-    //timerInput = parseInt(timerSelection),
     timerInput = $('#timer-input'),
-    secondaryTimer,
+    secondaryTimer, //defined later
     breakClock = $(".timer").find(".break-clock"),
     timerSoundsButton = $('#timer-sounds');
   
@@ -24,9 +21,7 @@ if(Number(localStorage.lastTimerTime)){
 
 }
 
-if(localStorage.timerSounds == 'true'){
-    timerSoundsButton.prop('checked', true);
-}
+
 
 // When entering new time, the app will trim it and turn it into seconds (*60).
 timerInput.on('change', function () {
@@ -44,8 +39,9 @@ timerInput.on('change', function () {
         breakTime = secondaryTimer * 60;
         breakClock.text(returnFormattedToSeconds(breakTime));
     }
-    if (newTime == 1) {
-        secondaryTimer = 1;
+    //debugging change, needs to be 30 and 3
+    if (newTime == 0.1) {
+        secondaryTimer = 0.1;
         breakTime = secondaryTimer * 60;
         breakClock.text(returnFormattedToSeconds(breakTime));
     }
@@ -64,17 +60,15 @@ $('.timer-btn.start').on('click',function(){
         startTimer();
     }
 });
-
+/*
 $('.cicrle.break-stuff.break-timer').on('click',function(){
     if(secondaryTimer>0) {
         startBreak();
     }
 });
 $('header.light-pink.quarter-height').on('click',function(){
-    if(secondaryTimer>0) {
-        startBreak();
-    }
-});
+
+});*/
 /**, function(){
              $(this).on('click',function(){
     if(secondaryTimer>0) {
@@ -236,17 +230,6 @@ function returnFormattedToSeconds(time){
 
 
  function swiperightHandler(event){
-    $('#notification' ).html('<div id="stop"> <header class="light-pink quarter-height"><img src="eye.png" alt="eye"><p>Look somewhere far away</p></header><div class="blue timer quarter-height"><div class="break-clock"><a href="#break-over">0:00</a></div></div><div class="green quarter-height"></div><footer class="dark"><a class="timer-btn start " href="#break-over"><button class="go">Go!</button></a></footer></div>');}
-
-
-//swipe for more see slip.js
-
- 
-
-  /*  swiping.addEventListener('slip:afterswipe', function(e){
-        //e.target.parentNode.appendChild(e.target);*/
-    /*          $("#notification").html("<div id='stop'  data-role='page'><header class='light-pink quarter-height'><img src='eye.png' alt='eye'><p>Look somewhere far away</p></header><div class='blue timer quarter-height'><div class='break-clock'><a href='#break-over'>0:00</a></div></div><div class='green quarter-height'></div><footer class='dark'><a class='timer-btn start' href='#break-over'><button class='go'>Go!</button></a></footer></div>");
-    }, false);*/
-
-
-   // new Slip(swiping);*/
+    startBreak();
+    $('#notification' ).html('<div id="stop"> <header class="light-pink quarter-height"><img src="eye.png" alt="eye"><p>Look somewhere far away</p></header><div class="blue timer quarter-height"><div class="break-clock"><a href="#break-over">0:00</a></div></div><div class="green quarter-height"></div><footer class="dark"><a class="timer-btn start " href="#break-over"><button class="go">Go!</button></a></footer></div>');
+ }
