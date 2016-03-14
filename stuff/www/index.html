@@ -14,29 +14,7 @@
     
 </head>
 
-<body id="main-app">
-    
-  
-        <!-- Would put this into the app.js, however for acadeic purposes it's a seperate file. Slip.js is a 
-        JS library for touch swiping
-        this was not needed when implementing native to JQM function "swipe"
-       <script type="application/javascript" src="js/slip.js"></script>
-        <script>
-        var swiping = document.getElementById('swipe');
-                swiping.addEventListener('slip:afterswipe', function(e){
-        e.target.parentNode.appendChild(e.target);
-      //   var swiping = document.getElementById('swipe');           
-            // $("#main-app").load('index.html');
-            if (/demo-no-reorder/.test(e.target.className)) {
-            e.preventDefault();
-        }
-     
-    }, false);
-
-
-    new Slip(swiping);
-        </script>-->
-    
+<body>
     				
    <div id="main" data-role="page">
         <header>
@@ -46,8 +24,7 @@
 
        <form>
            <section class="middle chooseTime">
-        <!--   -->
-               
+                    
     <div class="timer">
 			<form>
 				<div class="control input-field">
@@ -79,7 +56,7 @@
        </form>
     </div>   
 
-    <div id="timer"  data-role="page">
+    <div id="timer" data-role="page">
         <div class="most">
             <img src="done.png" alt="done">
             <div class="middle">
@@ -117,7 +94,7 @@
    
     </div> -->
 
-<div id="stop"  data-role="page">
+<div id="stop" data-role="page">
         <header class="light-pink quarter-height">
             <img src="eye.png" alt="eye">
             <p>Look somewhere far away</p>
@@ -138,7 +115,7 @@
         </footer>
    
     </div> -->
-    <div id="break-over"  data-role="page">
+    <div id="break-over" data-role="page">
         <div class="most">
          <div class="top">
                 <h1>Back to work!</h1>
@@ -153,14 +130,14 @@
             </div>
         </footer>
     </div> 
+
     <script src="intelxdk.js"></script>
         <script src="cordova.js"></script>
         <script src="xhr.js"></script>
         <script src="xdk/init-dev.js"></script>
         <script type="application/javascript" src="lib/jquery.min.js"></script>
         <script type="application/javascript" src="jqm/jquery.mobile-min.js" data-ver="0"></script>
-    
-        <script type="application/javascript" src="js/app.js"></script>
+    <script type="application/javascript" src="js/app.js"></script>
         <script type="application/javascript" src="js/init-app.js"></script>
 </body>
 </html>
