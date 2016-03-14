@@ -7,7 +7,7 @@ var timerClock = $(".timer").find(".clock"),
     secondaryTimer,
     breakClock = $(".timer").find(".break-clock");
 
-
+//http://www.joezimjs.com/javascript/jquery-html-youre-doing-it-wrong/
 // If there is a valid set time from last session, set it again.
 if (Number(localStorage.lastTimerTime)) {
     timerTime = Number(localStorage.lastTimerTime) * 60;
@@ -124,8 +124,8 @@ function vibrate() {
         console.log(navigator.notification);
     }
     // Vibrate for 3 seconds
-    navigator.vibrate(5000);
-    navigator.notification.beep(10);
+    navigator.vibrate(1000);
+    navigator.notification.beep(5);
     navigator.notification.alert(
         'Stop working, noooow!', // message
         alertDismissed, // callback
@@ -140,8 +140,8 @@ function bVibrate() {
         console.log(navigator.vibrate);
         console.log(navigator.notification);
     }
-    // Vibrate for 3 seconds
-    navigator.vibrate(5000);
+    // Vibrate for 1 seconds
+    navigator.vibrate(1000);
     navigator.notification.alert(
         'Go back to work!', // message
         nextPage, // callback
@@ -158,17 +158,20 @@ function alertDismissed(element, content) {
         content = "<div id='notification'><section class='blue'><div class='top'><h1>Break Time!</h1><p>Slide to start your break :)</p></div></section><footer class='dark'><div  id='swipe' class='pink demo-no-reorder'><p class='circle break-stuff break-timer'>Start Break</p></div></footer>";
 
     element.html(content);
-    $('#notification').on('swiperight', swiperightHandler);
+    resetTimer();
+    $('#notification').on('swiperight', swiperightHandler, startBreak);
+
 }
    
 function swiperightHandler(event) {
     $('#notification').html('<div id="stop"> <header class="light-pink quarter-height"><img src="eye.png" alt="eye"><p>Look somewhere far away</p></header><div class="blue timer quarter-height"></div><div class="green quarter-height"></div><footer class="dark"><a class="timer-btn start" href="#break-over"><button class="go">Go!</button></a></footer></div>');
-    startBreak();
+  
+
    
 }
 
 function nextPage() {
-    $("#timer").html("<div id='break-over'><div class='most'><div class='top'><h1> Back to work! </h1><p> Oh - oh, break's over ...</p></div></div><footer class='pink'><div class='timer'><a class='timer-btn start' href='#timer'><button class='go big'>Go!</button></a></div></footer></div>");
+    $("#timer").html("<div id='break-over'><div class='most'><div class='top'><h1> Back to work! </h1><p> Oh - oh, break's over ...</p></div></div><footer class='pink'><div class='timer'><a class='timer-btn start' href='#main'><button class='go big'>Go!</button></a></div></footer></div>");
 }
 
 function pauseTimer() {
