@@ -227,8 +227,8 @@ header.quarter-height {
 #stop {
 
     position: absolute;
-    left: -400px;
-    width: 400px;
+    left: -360px;
+    width: 360px;
     -webkit-animation: slide 0.1s forwards;
     -webkit-animation-delay: 0.1s;
     animation: slide 0.1s forwards;
