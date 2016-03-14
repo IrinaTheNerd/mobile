@@ -37,7 +37,7 @@ timerInput.on('change', function() {
     }
     //debugging change, needs to be 30 and 3
     if (newTime == 0.1) {
-        secondaryTimer = 0.1;
+        secondaryTimer = 0.2;
         breakTime = secondaryTimer * 60;
         breakClock.text(returnFormattedToSeconds(breakTime));
     }
@@ -102,11 +102,11 @@ function startBreak() {
     // Every 1000ms (1 second) decrease the set time until it reaches 0.
     timerInterval = setInterval(function() {
         breakTime--;
-        breakClock.text(returnFormattedToSeconds(breakTime));
+    //    breakClock.text(returnFormattedToSeconds(breakTime));
 
         if (breakTime <= 0) {
 
-            breakClock.text(returnFormattedToSeconds(0));
+       //     breakClock.text(returnFormattedToSeconds(0));
             pauseTimer();
             bVibrate();
             }
@@ -125,7 +125,7 @@ function vibrate() {
     }
     // Vibrate for 3 seconds
     navigator.vibrate(1000);
-    navigator.notification.beep(5);
+    navigator.notification.beep(2);
     navigator.notification.alert(
         'Stop working, noooow!', // message
         alertDismissed, // callback
@@ -155,18 +155,20 @@ function bVibrate() {
 function alertDismissed(element, content) {
    
         element = $("#timer");
-        content = "<div id='notification'><section class='blue'><div class='top'><h1>Break Time!</h1><p>Slide to start your break :)</p></div></section><footer class='dark'><div  id='swipe' class='pink demo-no-reorder'><p class='circle break-stuff break-timer'>Start Break</p></div></footer>";
+        content = "<div id='notification'><section class='blue'><div class='top'><h1>Break Time!</h1><p>Slide to start your break :)</p></div></section><footer class='dark'><div  id='swipe' class='pink demo-no-reorder'><a href='#stop' class='circle break-stuff break-timer'>Start Break</a></div></footer>";
 
     element.html(content);
-    resetTimer();
-    $('#notification').on('swiperight', swiperightHandler, startBreak);
+//    $('#notification').on('swiperight', swiperightHandler);
 
 }
    
 function swiperightHandler(event) {
-    $('#notification').html('<div id="stop"> <header class="light-pink quarter-height"><img src="eye.png" alt="eye"><p>Look somewhere far away</p></header><div class="blue timer quarter-height"></div><div class="green quarter-height"></div><footer class="dark"><a class="timer-btn start" href="#break-over"><button class="go">Go!</button></a></footer></div>');
-  
-
+   
+   // $('#notification').html('<div id="stop"> <header class="light-pink quarter-height"><img src="eye.png" alt="eye"><p>Look somewhere far away</p></header><div class="blue timer quarter-height"></div><div class="green quarter-height"></div><footer class="dark"><a class="timer-btn start" href="#break-over"><button class="go">Go!</button></a></footer></div>');
+  //if(secondaryTimer > 0){
+      startBreak();
+  //}
+    console.log(breakTime);
    
 }
 
