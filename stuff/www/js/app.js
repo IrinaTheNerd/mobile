@@ -11,10 +11,8 @@ var timerClock = $(".timer").find(".clock"),
 // If there is a valid set time from last session, set it again.
 if (Number(localStorage.lastTimerTime)) {
     timerTime = Number(localStorage.lastTimerTime) * 60;
-
     timerClock.text(returnFormattedToSeconds(timerTime));
     timerInput.val(localStorage.lastTimerTime);
-
     breakClock.text(returnFormattedToSeconds(breakTime));
 
 }
@@ -34,6 +32,7 @@ timerInput.on('change', function() {
     if (newTime == 20) {
         secondaryTimer = 1;
         breakTime = secondaryTimer * 60;
+         console.log(breakTime);
         breakClock.text(returnFormattedToSeconds(breakTime));
 
     }
@@ -41,22 +40,25 @@ timerInput.on('change', function() {
     if (newTime == 0.1) {
         secondaryTimer = 0.2;
         breakTime = secondaryTimer * 60;
+        console.log(breakTime);
         breakClock.text(returnFormattedToSeconds(breakTime));
     }
 
     if (newTime == 52) {
         secondaryTimer = 17;
         breakTime = secondaryTimer * 60;
+         console.log(breakTime);
         breakClock.text(returnFormattedToSeconds(breakTime));
 
     }
-    
+     console.log(breakTime);
 });
 
 $('.timer-btn.start').on('click', function() {
     if (timerTime > 0) {
         startTimer();
     }
+     console.log(breakTime);
 });
 
 
@@ -83,7 +85,7 @@ function startTimer() {
 
     timerInput.prop('disabled', true);
     timerClock.removeClass('inactive');
-
+ console.log(breakTime);
 }
 
 function startBreak() {
@@ -105,6 +107,7 @@ function startBreak() {
 
     timerInput.prop('disabled', true);
     timerClock.removeClass('inactive');
+     console.log(breakTime);
 }
 
 function vibrate() {
@@ -146,9 +149,8 @@ function bVibrate() {
 function alertDismissed(element, content) {
    
         element = $("#timer");
-        content = "<div id='notification'><section class='blue'><div class='top'><h1>Break Time!</h1><p>Slide to start your break :)</p></div></section><footer class='dark'><div  id='swipe' class='pink demo-no-reorder'><a href='#stop' class='circle break-stuff break-timer'>Start Break</a></div></footer>";
-
-    element.html(content);
+        content = "<div id='notification'><section class='blue'><div class='top'><h1>Break Time!</h1><p>Slide to start your break :)</p></div></section><footer class='dark'><div  id='swipe' class='pink demo-no-reorder'></div></footer>";
+element.html(content);
     $('#notification').on('swiperight', swiperightHandler);
 
 }
@@ -156,9 +158,10 @@ function alertDismissed(element, content) {
 function swiperightHandler(event) {
    
     $('#notification').html('<div id="stop"> <header class="light-pink quarter-height"><img src="eye.png" alt="eye"><p>Look somewhere far away</p></header><div class="blue timer quarter-height"></div><div class="green quarter-height"></div><footer class="dark"><a class="timer-btn start" href="#break-over"><button class="go">Go!</button></a></footer></div>');
- if(secondaryTimer > 0){
-      startBreak();
- }
+    console.log(secondaryTimer);
+    if(secondaryTimer>0) {
+        startBreak();
+    }
     console.log(breakTime);
    
 }
