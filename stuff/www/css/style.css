@@ -224,6 +224,9 @@ section.blue {
 header.quarter-height {
     height: 40vh;
 }
+footer.pink > p {
+    color:#01b0f0;
+}
 #stop {
 
     position: absolute;

@@ -149,7 +149,8 @@ function bVibrate() {
 function alertDismissed(element, content) {
    
         element = $("#timer");
-        content = "<div id='notification'><section class='blue'><div class='top'><h1>Break Time!</h1><p>Slide to start your break :)</p></div></section><footer class='dark'><div  id='swipe' class='pink demo-no-reorder'></div></footer>";
+        content = "<div id='notification'><section class='blue'><div class='top'><h1>Break Time!</h1><p></p></div></section><footer class='pink'><p>Swipe the screen</p></footer>";
+ 
 element.html(content);
     $('#notification').on('swiperight', swiperightHandler);
 
@@ -157,7 +158,7 @@ element.html(content);
    
 function swiperightHandler(event) {
    
-    $('#notification').html('<div id="stop"> <header class="light-pink quarter-height"><img src="eye.png" alt="eye"><p>Look somewhere far away</p></header><div class="blue timer quarter-height"></div><div class="green quarter-height"></div><footer class="dark"><a class="timer-btn start" href="#break-over"><button class="go">Go!</button></a></footer></div>');
+    $('#notification').html('<div id="stop"> <header class="light-pink quarter-height"><img src="img/eye.png" alt="eye"><p>Look somewhere far away</p></header><div class="blue timer quarter-height"></div><div class="green quarter-height"></div><footer class="dark"></footer></div>');
     console.log(secondaryTimer);
     if(secondaryTimer>0) {
         startBreak();
