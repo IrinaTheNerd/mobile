@@ -38,7 +38,7 @@ timerInput.on('change', function() {
     }
     //debugging change, needs to be 30 and 3
     if (newTime == 0.1) {
-        secondaryTimer = 0.2;
+        secondaryTimer = 0.1;
         breakTime = secondaryTimer * 60;
         console.log(breakTime);
         breakClock.text(returnFormattedToSeconds(breakTime));
@@ -127,6 +127,8 @@ function vibrate() {
         'Done' // buttonName
     );
 }
+
+//vibration method for breaks
 function bVibrate() {
     document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -144,12 +146,12 @@ function bVibrate() {
     );
 }
 
-
+//alert dismissed method written with the notification plugin
 
 function alertDismissed(element, content) {
    
         element = $("#timer");
-        content = "<div id='notification'><section class='blue'><div class='top'><h1>Break Time!</h1><p></p></div></section><footer class='pink'><p>Swipe the screen</p></footer>";
+        content = "<div id='notification'><section class='blue half'><div class='top center'><h1>Break Time!</h1></div></section><footer class='pink half'><img src='img/swipe.png' alt='swipe to the right'><footer>";
  
 element.html(content);
     $('#notification').on('swiperight', swiperightHandler);
@@ -157,9 +159,15 @@ element.html(content);
 }
    
 function swiperightHandler(event) {
-   
-    $('#notification').html('<div id="stop"> <header class="light-pink quarter-height"><img src="img/eye.png" alt="eye"><p>Look somewhere far away</p></header><div class="blue timer quarter-height"></div><div class="green quarter-height"></div><footer class="dark"></footer></div>');
-    console.log(secondaryTimer);
+   if(secondaryTimer == 1) {
+    $('#notification').html('<div id="stop"> <header class="light-pink quarter-height"><img src="img/eye.png" alt="eye"><p>Look somewhere far away</p></header><div class="blue timer quarter-height"></div><div class="green quarter-height"></div><footer class="dark"><p>Walk away from the screen</p></footer></div>');
+   }
+    else if (secondaryTimer == 0.1) {
+          $('#notification').html('<div id="stop"> <header class="pink quarter-height"><img src="img/coffee.png" alt="eye"><p class="white">Make yourself a drink!</p></header><div class="blue timer quarter-height"></div><div class="green quarter-height"></div><footer class="dark"><p class="white">Any drink :)</p></footer></div>');  
+    }
+    else if(secondaryTimer == 17){
+        $('#notification').html('<div id="stop"> <header class="light-pink quarter-height"><img src="img/fitness.png" alt="fintess"><p>Get out of your chair</p></header><div class="blue timer quarter-height"></div><div class="green quarter-height"></div><footer class="dark"></footer></div>');  
+    }
     if(secondaryTimer>0) {
         startBreak();
     }
