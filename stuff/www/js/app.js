@@ -118,8 +118,8 @@ function vibrate() {
         console.log(navigator.notification);
     }
     // Vibrate for 3 seconds
-    navigator.vibrate(1000);
-    navigator.notification.beep(2);
+    navigator.vibrate(3000);
+    navigator.notification.beep(3);
     navigator.notification.alert(
         'Stop working, noooow!', // message
         alertDismissed, // callback
@@ -137,7 +137,7 @@ function bVibrate() {
         console.log(navigator.notification);
     }
     // Vibrate for 1 seconds
-    navigator.vibrate(1000);
+    navigator.vibrate(2000);
     navigator.notification.alert(
         'Go back to work!', // message
         nextPage, // callback
@@ -163,7 +163,7 @@ function swiperightHandler(event) {
     $('#notification').html('<div id="stop"> <header class="light-pink quarter-height"><img src="img/eye.png" alt="eye"><p>Look somewhere far away</p></header><div class="blue timer quarter-height"></div><div class="green quarter-height"></div><footer class="dark"><p>Walk away from the screen</p></footer></div>');
    }
     else if (secondaryTimer == 0.1) {
-          $('#notification').html('<div id="stop"> <header class="pink quarter-height"><img src="img/coffee.png" alt="eye"><p class="white">Make yourself a drink!</p></header><div class="blue timer quarter-height"></div><div class="green quarter-height"></div><footer class="dark"><p class="white">Any drink :)</p></footer></div>');  
+          $('#notification').html('<div id="stop"> <header class="pink quarter-height"><img src="img/coffee.png" alt="coffee"><p class="white">Make yourself a drink!</p></header><div class="blue timer quarter-height"></div><div class="green quarter-height"></div><footer class="dark"><p class="white">Any drink :)</p></footer></div>');  
     }
     else if(secondaryTimer == 17){
         $('#notification').html('<div id="stop"> <header class="light-pink quarter-height"><img src="img/fitness.png" alt="fintess"><p>Get out of your chair</p></header><div class="blue timer quarter-height"></div><div class="green quarter-height"></div><footer class="dark"></footer></div>');  

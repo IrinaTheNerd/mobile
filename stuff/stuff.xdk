@@ -5,7 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-project-lite/sample.zip",
       "projectGuid": "2a75e66c-e327-419e-a0f0-3df0ea20b1f9",
-      "lastModifiedDate": 1457976756370,
+      "lastModifiedDate": 1458646525244,
       "creationDate": 1450038388510
     },
     "XDK-app-designer": "false",
@@ -103,7 +103,7 @@
           "android-installLocation": "auto"
         },
         "isActive_": true,
-        "appName_": "stuff",
+        "appName_": "Productivity+",
         "appID_": "xdk.intel.cordova.template.lite",
         "appAccess_": {
           "mode": "legacy",
@@ -113,7 +113,32 @@
           "intents": [],
           "navigation": []
         },
-        "icons_": [],
+        "icons_": [
+          {
+            "relPath": "img/smallIcon.png",
+            "density": "ldpi",
+            "height": 36,
+            "width": 36
+          },
+          {
+            "relPath": "img/mediumicon.png",
+            "density": "mdpi",
+            "height": 48,
+            "width": 48
+          },
+          {
+            "relPath": "img/typical.png",
+            "density": "hdpi",
+            "height": 72,
+            "width": 72
+          },
+          {
+            "relPath": "img/larrge.png",
+            "density": "xhdpi",
+            "height": 96,
+            "width": 96
+          }
+        ],
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
@@ -134,7 +159,7 @@
           "android-installLocation": "auto"
         },
         "isActive_": true,
-        "appName_": "stuff",
+        "appName_": "Productivity+",
         "appID_": "xdk.intel.cordova.template.lite",
         "appAccess_": {
           "mode": "legacy",
@@ -144,8 +169,62 @@
           "intents": [],
           "navigation": []
         },
-        "icons_": [],
-        "splashes_": [],
+        "icons_": [
+          {
+            "relPath": "img/smallIcon.png",
+            "density": "ldpi",
+            "height": 36,
+            "width": 36
+          },
+          {
+            "relPath": "img/larrge.png",
+            "density": "xhdpi",
+            "height": 96,
+            "width": 96
+          },
+          {
+            "relPath": "img/mediumicon.png",
+            "density": "mdpi",
+            "height": 48,
+            "width": 48
+          },
+          {
+            "relPath": "img/typical.png",
+            "density": "hdpi",
+            "height": 72,
+            "width": 72
+          }
+        ],
+        "splashes_": [
+          {
+            "relPath": "img/splashxsmall.png",
+            "density": "ldpi",
+            "height": 426,
+            "width": 320,
+            "orientation": "portrait"
+          },
+          {
+            "relPath": "img/splash-small.png",
+            "density": "mdpi",
+            "height": 470,
+            "width": 320,
+            "orientation": "portrait"
+          },
+          {
+            "relPath": "img/medium.png",
+            "density": "hdpi",
+            "height": 640,
+            "width": 480,
+            "orientation": "portrait"
+          },
+          {
+            "relPath": "img/large.png",
+            "density": "xhdpi",
+            "height": 960,
+            "width": 720,
+            "orientation": "portrait"
+          }
+        ],
         "addlPermissions_": "",
         "excludedLibraries_": "",
         "cordovaCLIVersion_": "5.1.1",
